@@ -40,17 +40,17 @@ end
 
 def hit?(total)
   # code hit? here
-  while true do
+ prompt_user
+  user_input = get_user_input
+  while user_input != "h" && user_input != "s"
+    invalid_command
     prompt_user
-    if get_user_input == "s"
-      return total
-    elsif get_user_input =="h"
-      deal_card
-      return total
-    else
-      invalid_command
-    end
+    user_input = get_user_input
   end
+  if user_input == "h"
+    current_card_value += deal_card
+  end
+  return current_card_value
 end
 
 def invalid_command
