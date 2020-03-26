@@ -65,8 +65,7 @@ end
 def runner
   # code runner here
   welcome
-  cards1 = initial_round
-  total = hit?(cards1)
+  total = initial_round
   until total < 21
     if total == cards1
       total = hit?(cards1)
