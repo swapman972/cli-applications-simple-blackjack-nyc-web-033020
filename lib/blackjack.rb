@@ -26,20 +26,35 @@ end
 
 def end_game(num)
   # code #end_game here
-  "Sorry, you hit #{num}. Thanks for playing!"
+  puts "Sorry, you hit #{num}. Thanks for playing!"
 end
 
 def initial_round
   # code #initial_round here
-  
+  first_card = deal_card
+  second_card = deal_card
+  sum = first_card +second_card
+  display_card_total(sum)
+  return sum
 end
 
-def hit?
+def hit?(total)
   # code hit? here
+  while true do
+    prompt_user
+    if get_user_input == "s"
+      return total
+    elsif get_user_input =="h"
+      return deal_card
+    else
+      invalid_command
+    end
+  end
 end
 
 def invalid_command
   # code invalid_command here
+  puts "Please enter a valid command"
 end
 
 #####################################################
@@ -48,5 +63,6 @@ end
 
 def runner
   # code runner here
+  
 end
     
